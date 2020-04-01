@@ -32,19 +32,29 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
+import java.net.*;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 public class CountAndSay {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnknownHostException {
 
-        Solution solution = new CountAndSay().new Solution();
-
-        // System.out.println("s = " + solution.countAndSay(1));
-        // System.out.println("s = " + solution.countAndSay(2));
-        // System.out.println("s = " + solution.countAndSay(3));
-        System.out.println("s = " + solution.countAndSay(4));
-        // System.out.println("s = " + solution.countAndSay(5));
-
-
+        // Solution solution = new CountAndSay().new Solution();
+        String hostAddress = InetAddress.getLocalHost().getHostAddress();
+        System.out.println("hostAddress = " + hostAddress);
     }
+
+
+
+    static class A1{
+        private String test;
+    }
+    static class A2{
+        private String test;
+    }
+
 
     /**
      * 每次输入数的时候将之前的重新遍历一遍
