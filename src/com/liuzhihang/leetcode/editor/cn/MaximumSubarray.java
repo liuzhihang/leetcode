@@ -13,20 +13,38 @@
 // Related Topics 数组 分治算法 动态规划
 
 package com.liuzhihang.leetcode.editor.cn;
-public class MaximumSubarray{
-  public static void main(String[] args) {
-  
-       Solution solution = new MaximumSubarray().new Solution();
-  }
-    
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maxSubArray(int[] nums) {
+public class MaximumSubarray {
+    public static void main(String[] args) {
 
-        return 0;
+        Solution solution = new MaximumSubarray().new Solution();
+
+        System.out.println(solution.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
     }
-}
+
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int maxSubArray(int[] nums) {
+
+            int temp = 0;
+            int max = nums[0];
+
+            for (int i = 0; i < nums.length; i++) {
+
+                if (temp > 0) {
+                    temp = temp + nums[i];
+                } else {
+                    temp = nums[i];
+                }
+
+                max = Math.max(max, temp);
+            }
+
+
+            return max;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
