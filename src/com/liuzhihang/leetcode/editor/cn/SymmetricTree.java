@@ -32,6 +32,9 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class SymmetricTree {
     public static void main(String[] args) {
 
@@ -51,32 +54,86 @@ public class SymmetricTree {
     }
 
     class Solution {
+
+        // 迭代
         public boolean isSymmetric(TreeNode root) {
 
             if (root == null) {
                 return true;
             }
 
-            return isEq(root.left, root.right);
-        }
+            TreeNode left = root.left;
+            TreeNode right = root.right;
 
-        public boolean isEq(TreeNode left, TreeNode right) {
+            Queue<TreeNode> treeNodeQueue = new LinkedList<>();
 
-            if (left == null && right == null) {
-                return true;
-            }
+            treeNodeQueue.offer(left);
+            treeNodeQueue.offer(right);
 
-            if (left != null && right != null) {
-                if (left.val == right.val) {
-                    return isEq(left.left, right.right) && isEq(left.right, right.left);
+            while (!treeNodeQueue.isEmpty()) {
+                // 连续吐出两次分别是左右的
+                left = treeNodeQueue.poll();
+                right = treeNodeQueue.poll();
+
+                if (left == null && right == null) {
+                    continue;
+                }
+                if (left == null || right == null) {
+                    return false;
                 }
 
+                if (left.val != right.val) {
+                    return false;
+                }
+
+                treeNodeQueue.offer(left.left);
+                treeNodeQueue.offer(right.right);
+
+                treeNodeQueue.offer(left.right);
+                treeNodeQueue.offer(right.left);
+
             }
 
-            return false;
+            return true;
         }
 
+
+
+
     }
+
+
+    // 递归法
+    // public boolean isSymmetric(TreeNode root) {
+    //
+    //     if (root == null) {
+    //         return true;
+    //     }
+    //
+    //     return isEq(root.left, root.right);
+    // }
+    //
+    // public boolean isEq(TreeNode left, TreeNode right) {
+    //
+    //     if (left == null && right == null) {
+    //         return true;
+    //     }
+    //
+    //     if (left != null && right != null) {
+    //         if (left.val == right.val) {
+    //             return isEq(left.left, right.right) && isEq(left.right, right.left);
+    //         }
+    //
+    //     }
+    //
+    //     return false;
+    // }
+
+
+
+
+
+//
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
