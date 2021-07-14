@@ -34,31 +34,61 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
-public class MinimumDepthOfBinaryTree{
+public class MinimumDepthOfBinaryTree {
     public static void main(String[] args) {
+
         Solution solution = new MinimumDepthOfBinaryTree().new Solution();
-    }
-    //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public int minDepth(TreeNode root) {
 
     }
-}
+
+//leetcode submit region begin(Prohibit modification and deletion)
+
+    class Solution {
+
+        public int minDepth(TreeNode root) {
+
+            if (root == null) {
+                return 0;
+            }
+            // 叶子节点
+            if (root.left == null && root.right == null) {
+                return 1;
+            }
+
+            if (root.left != null && root.right == null) {
+                return minDepth(root.left) + 1;
+            }
+
+            if (root.left == null && root.right != null) {
+                return minDepth(root.right) + 1;
+            }
+
+            return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
+
+        }
+
+
+    }
 //leetcode submit region end(Prohibit modification and deletion)
+
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
 }
