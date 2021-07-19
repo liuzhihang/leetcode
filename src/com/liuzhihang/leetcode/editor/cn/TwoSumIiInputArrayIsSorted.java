@@ -74,13 +74,12 @@ public class TwoSumIiInputArrayIsSorted {
 
                     int i1 = left + ((right - left) >> 1);
 
-                    if (numbers[i1] == tempTarget) {
-                        return new int[]{i + 1, i1 + 1};
-                    } else if (numbers[i1] > tempTarget) {
+                    if (numbers[i1] > tempTarget) {
                         right = i1 - 1;
-                    } else {
+                    } else if (numbers[i1] < tempTarget) {
                         left = i1 + 1;
-
+                    } else {
+                        return new int[]{i + 1, i1 + 1};
                     }
                 }
 
