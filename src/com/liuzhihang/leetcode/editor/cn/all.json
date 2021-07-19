@@ -1867,7 +1867,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "155",
-    "status": "",
+    "status": "ac",
     "title": "最小栈",
     "titleSlug": "min-stack"
   },
@@ -1927,7 +1927,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "160",
-    "status": "",
+    "status": "ac",
     "title": "相交链表",
     "titleSlug": "intersection-of-two-linked-lists"
   },
@@ -23254,6 +23254,18 @@
     "status": "",
     "title": "查询最大基因差",
     "titleSlug": "maximum-genetic-difference-query"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1939]Users That Actively Request Confirmation Messages",
+    "frontendQuestionId": "1939",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "2092",
+    "status": "",
+    "title": "Users That Actively Request Confirmation Messages",
+    "titleSlug": "users-that-actively-request-confirmation-messages"
   },
   {
     "articleLive": 2,
