@@ -88,52 +88,32 @@ public class IntersectionOfTwoLinkedLists {
             if (headA == null || headB == null) {
                 return null;
             }
-
-            int aSize = size(headA);
-            int bSize = size(headB);
-
+            // 同时开始跑
+            // 跑完之后开始跑另一条链表
+            // 相当于组装成了 AB 和 BA 两条链表
+            // 有交叉则相等
+            // 无交叉则最后都是 null
             ListNode aTemp = headA;
-            if (aSize > bSize) {
-                // A 先走
-                int step = aSize - bSize;
-
-                while (step > 0) {
-                    step--;
-                    aTemp = aTemp.next;
-                }
-
-            }
-
             ListNode bTemp = headB;
-            if (aSize < bSize) {
-                // B 先走
-                int step = bSize - aSize;
-                while (step > 0) {
-                    step--;
+
+            while (aTemp != bTemp) {
+
+                if (aTemp != null) {
+                    aTemp = aTemp.next;
+                } else {
+                    aTemp = headB;
+                }
+                if (bTemp != null) {
                     bTemp = bTemp.next;
+                } else {
+                    bTemp = headA;
                 }
-            }
 
-            while (aTemp != null && bTemp != null) {
-                if (aTemp == bTemp) {
-                    return aTemp;
-                }
-                aTemp = aTemp.next;
-                bTemp = bTemp.next;
             }
-            return null;
-
+            return aTemp;
         }
 
-        private int size(ListNode listNode) {
-            ListNode temp = listNode;
-            int size = 0;
-            while (temp != null) {
-                size++;
-                temp = temp.next;
-            }
-            return size;
-        }
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
@@ -147,5 +127,58 @@ public class IntersectionOfTwoLinkedLists {
             next = null;
         }
     }
-
+    // 先算出各自链表的长度,然后较长链表先走 N 步
+    // public class Solution {
+    //     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    //
+    //         if (headA == null || headB == null) {
+    //             return null;
+    //         }
+    //
+    //         int aSize = size(headA);
+    //         int bSize = size(headB);
+    //
+    //         ListNode aTemp = headA;
+    //         if (aSize > bSize) {
+    //             // A 先走
+    //             int step = aSize - bSize;
+    //
+    //             while (step > 0) {
+    //                 step--;
+    //                 aTemp = aTemp.next;
+    //             }
+    //
+    //         }
+    //
+    //         ListNode bTemp = headB;
+    //         if (aSize < bSize) {
+    //             // B 先走
+    //             int step = bSize - aSize;
+    //             while (step > 0) {
+    //                 step--;
+    //                 bTemp = bTemp.next;
+    //             }
+    //         }
+    //
+    //         while (aTemp != null && bTemp != null) {
+    //             if (aTemp == bTemp) {
+    //                 return aTemp;
+    //             }
+    //             aTemp = aTemp.next;
+    //             bTemp = bTemp.next;
+    //         }
+    //         return null;
+    //
+    //     }
+    //
+    //     private int size(ListNode listNode) {
+    //         ListNode temp = listNode;
+    //         int size = 0;
+    //         while (temp != null) {
+    //             size++;
+    //             temp = temp.next;
+    //         }
+    //         return size;
+    //     }
+    // }
 }
