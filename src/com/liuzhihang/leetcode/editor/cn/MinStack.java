@@ -55,49 +55,26 @@ import java.util.LinkedList;
 class MinStack {
 
     private LinkedList<Integer> stack = new LinkedList<>();
-    private LinkedList<Integer> sortList = new LinkedList<>();
+    private LinkedList<Integer> minStack = new LinkedList<>();
 
     /**
      * initialize your data structure here.
      */
     public MinStack() {
-
+        minStack.addFirst(Integer.MAX_VALUE);
     }
 
     public void push(int val) {
         stack.addFirst(val);
 
-        if (sortList.isEmpty()) {
-            sortList.addFirst(val);
-        } else {
-
-            int tempIndex = 0;
-
-            for (Integer indexVal : sortList) {
-                if (indexVal > val) {
-                    break;
-                }
-                tempIndex++;
-            }
-
-            sortList.add(tempIndex, val);
-
-        }
-
+        // minStack 只存储入栈时的最小值
+        minStack.addFirst(Math.min(val, minStack.getFirst()));
 
     }
 
     public void pop() {
-        Integer pop = stack.pop();
-
-        int tempIndex = 0;
-        for (Integer indexVal : sortList) {
-            if (indexVal.equals(pop)) {
-                break;
-            }
-            tempIndex++;
-        }
-        sortList.remove(tempIndex);
+        stack.pop();
+        minStack.pop();
     }
 
     public int top() {
@@ -106,7 +83,7 @@ class MinStack {
 
     public int getMin() {
 
-        return sortList.getFirst();
+        return minStack.getFirst();
     }
 }
 
