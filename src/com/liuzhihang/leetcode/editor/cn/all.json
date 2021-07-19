@@ -1,15 +1,15 @@
 [
   {
     "articleLive": 2,
-    "formTitle": "[1846]减小和重新排列数组后的最大元素",
-    "frontendQuestionId": "1846",
+    "formTitle": "[1838]最高频元素的频数",
+    "frontendQuestionId": "1838",
     "leaf": true,
     "level": 2,
     "nodeType": "def",
-    "questionId": "1956",
+    "questionId": "1966",
     "status": "",
-    "title": "减小和重新排列数组后的最大元素",
-    "titleSlug": "maximum-element-after-decreasing-and-rearranging"
+    "title": "最高频元素的频数",
+    "titleSlug": "frequency-of-the-most-frequent-element"
   },
   {
     "articleLive": 2,
@@ -1459,7 +1459,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "121",
-    "status": "",
+    "status": "ac",
     "title": "买卖股票的最佳时机",
     "titleSlug": "best-time-to-buy-and-sell-stock"
   },
@@ -1471,7 +1471,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "122",
-    "status": "",
+    "status": "ac",
     "title": "买卖股票的最佳时机 II",
     "titleSlug": "best-time-to-buy-and-sell-stock-ii"
   },
@@ -1507,7 +1507,7 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "125",
-    "status": "",
+    "status": "ac",
     "title": "验证回文串",
     "titleSlug": "valid-palindrome"
   },
@@ -9460,7 +9460,7 @@
     "formTitle": "[788]旋转数字",
     "frontendQuestionId": "788",
     "leaf": true,
-    "level": 1,
+    "level": 2,
     "nodeType": "def",
     "questionId": "804",
     "status": "",
@@ -21337,14 +21337,14 @@
   },
   {
     "articleLive": 2,
-    "formTitle": "[1778]Shortest Path in a Hidden Grid",
+    "formTitle": "[1778]未知网格中的最短路径",
     "frontendQuestionId": "1778",
     "leaf": true,
     "level": 2,
     "nodeType": "def",
     "questionId": "1931",
     "status": "lock",
-    "title": "Shortest Path in a Hidden Grid",
+    "title": "未知网格中的最短路径",
     "titleSlug": "shortest-path-in-a-hidden-grid"
   },
   {
@@ -21721,14 +21721,14 @@
   },
   {
     "articleLive": 2,
-    "formTitle": "[1810]Minimum Path Cost in a Hidden Grid",
+    "formTitle": "[1810]隐藏网格下的最小消耗路径",
     "frontendQuestionId": "1810",
     "leaf": true,
     "level": 2,
     "nodeType": "def",
     "questionId": "1959",
     "status": "lock",
-    "title": "Minimum Path Cost in a Hidden Grid",
+    "title": "隐藏网格下的最小消耗路径",
     "titleSlug": "minimum-path-cost-in-a-hidden-grid"
   },
   {
@@ -22057,18 +22057,6 @@
   },
   {
     "articleLive": 2,
-    "formTitle": "[1838]最高频元素的频数",
-    "frontendQuestionId": "1838",
-    "leaf": true,
-    "level": 2,
-    "nodeType": "def",
-    "questionId": "1966",
-    "status": "",
-    "title": "最高频元素的频数",
-    "titleSlug": "frequency-of-the-most-frequent-element"
-  },
-  {
-    "articleLive": 2,
     "formTitle": "[1839]所有元音按顺序排布的最长子字符串",
     "frontendQuestionId": "1839",
     "leaf": true,
@@ -22150,6 +22138,18 @@
     "status": "",
     "title": "座位预约管理系统",
     "titleSlug": "seat-reservation-manager"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1846]减小和重新排列数组后的最大元素",
+    "frontendQuestionId": "1846",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "1956",
+    "status": "",
+    "title": "减小和重新排列数组后的最大元素",
+    "titleSlug": "maximum-element-after-decreasing-and-rearranging"
   },
   {
     "articleLive": 2,
@@ -23191,9 +23191,69 @@
     "level": 1,
     "nodeType": "def",
     "questionId": "2070",
-    "status": "",
+    "status": "lock",
     "title": "判断字符串是否可分解为值均等的子串",
     "titleSlug": "check-if-string-is-decomposable-into-value-equal-substrings"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1934]Confirmation Rate",
+    "frontendQuestionId": "1934",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "2087",
+    "status": "lock",
+    "title": "Confirmation Rate",
+    "titleSlug": "confirmation-rate"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1935]可以输入的最大单词数",
+    "frontendQuestionId": "1935",
+    "leaf": true,
+    "level": 1,
+    "nodeType": "def",
+    "questionId": "1264",
+    "status": "",
+    "title": "可以输入的最大单词数",
+    "titleSlug": "maximum-number-of-words-you-can-type"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1936]新增的最少台阶数",
+    "frontendQuestionId": "1936",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "2066",
+    "status": "",
+    "title": "新增的最少台阶数",
+    "titleSlug": "add-minimum-number-of-rungs"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1937]扣分后的最大得分",
+    "frontendQuestionId": "1937",
+    "leaf": true,
+    "level": 2,
+    "nodeType": "def",
+    "questionId": "2067",
+    "status": "",
+    "title": "扣分后的最大得分",
+    "titleSlug": "maximum-number-of-points-with-cost"
+  },
+  {
+    "articleLive": 2,
+    "formTitle": "[1938]查询最大基因差",
+    "frontendQuestionId": "1938",
+    "leaf": true,
+    "level": 3,
+    "nodeType": "def",
+    "questionId": "2068",
+    "status": "",
+    "title": "查询最大基因差",
+    "titleSlug": "maximum-genetic-difference-query"
   },
   {
     "articleLive": 2,
