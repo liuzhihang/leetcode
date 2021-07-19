@@ -63,24 +63,29 @@ public class TwoSumIiInputArrayIsSorted {
                 return null;
             }
 
-            // 双指针
+            for (int i = 0; i < numbers.length; i++) {
+                int tempTarget = target - numbers[i];
 
-            int lowIndex = 0;
-            int highIndex = numbers.length - 1;
+                // 二分查找
+                int left = i + 1;
+                int right = numbers.length - 1;
 
-            while (lowIndex < highIndex) {
-                int sum = numbers[lowIndex] + numbers[highIndex];
-                if (sum == target) {
-                    return new int[]{lowIndex + 1, highIndex + 1};
-                } else if (sum < target) {
-                    lowIndex++;
-                } else {
-                    highIndex--;
+                while (left <= right) {
+
+                    int i1 = left + ((right - left) >> 1);
+
+                    if (numbers[i1] == tempTarget) {
+                        return new int[]{i + 1, i1 + 1};
+                    } else if (numbers[i1] > tempTarget) {
+                        right = i1 - 1;
+                    } else {
+                        left = i1 + 1;
+
+                    }
                 }
 
+
             }
-
-
             return null;
 
         }
