@@ -30,7 +30,7 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
-import java.util.HashMap;
+import java.util.Arrays;
 
 public class MajorityElement {
 
@@ -45,32 +45,10 @@ public class MajorityElement {
 
         public int majorityElement(int[] nums) {
 
-            HashMap<Integer, Integer> hashMap = new HashMap<>();
+            Arrays.sort(nums);
 
-            for (int i = 0; i < nums.length; i++) {
+            return nums[nums.length / 2];
 
-                Integer integer = hashMap.get(nums[i]);
-
-                if (integer == null) {
-                    hashMap.put(nums[i], 1);
-                } else {
-                    hashMap.put(nums[i], integer + 1);
-                }
-            }
-
-            int maxKey = 0;
-            int maxValue = 0;
-
-            for (Integer integer : hashMap.keySet()) {
-
-                if (hashMap.get(integer) > maxValue) {
-                    maxKey = integer;
-                    maxValue = hashMap.get(integer);
-                }
-
-
-            }
-            return maxKey;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
