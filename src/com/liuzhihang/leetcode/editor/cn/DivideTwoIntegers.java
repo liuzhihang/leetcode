@@ -37,6 +37,7 @@ public class DivideTwoIntegers {
     public static void main(String[] args) {
 
         Solution solution = new DivideTwoIntegers().new Solution();
+        System.out.println(solution.divide(-2147483648, -1));
 
     }
 
@@ -44,7 +45,47 @@ public class DivideTwoIntegers {
     class Solution {
         public int divide(int dividend, int divisor) {
 
+            if (dividend == 0) {
+                return 0;
+            }
+
+            long dividendl = dividend;
+            long divisorl = divisor;
+
+            boolean dividend0 = false;
+            if (dividendl < 0) {
+                dividend0 = true;
+                dividendl = -dividendl;
+            }
+            boolean divisor0 = false;
+            if (divisorl < 0) {
+                divisor0 = true;
+                divisorl = -divisorl;
+            }
+
+            long res = 0;
+
+            if (divisorl != 1) {
+                while (dividendl >= divisorl) {
+                    res++;
+                    dividendl -= divisorl;
+                }
+            } else {
+                res = dividendl;
+            }
+
+            if (dividend0 ^ divisor0) {
+                return (int) -res;
+            } else {
+                if (res > Integer.MAX_VALUE) {
+                    return Integer.MAX_VALUE;
+                }
+
+                return (int) res;
+            }
+
         }
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
