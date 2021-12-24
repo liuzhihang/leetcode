@@ -26,7 +26,10 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class BinaryTreeLevelOrderTraversalIi {
 
@@ -55,53 +58,35 @@ public class BinaryTreeLevelOrderTraversalIi {
                 return listList;
             }
 
-
-            Queue<TreeNode> one = new LinkedList<>();
-            Queue<TreeNode> two = new LinkedList<>();
-            one.offer(root);
+            Queue<TreeNode> linked = new LinkedList<>();
+            linked.offer(root);
+            linked.offer(null);
 
             List<Integer> nodeList = new ArrayList<>();
 
-            boolean oneFlag = true;
+            while (!linked.isEmpty()) {
+                TreeNode node = linked.poll();
 
-            while (!one.isEmpty() || !two.isEmpty()) {
-                if (oneFlag) {
-                    TreeNode node = one.poll();
-                    nodeList.add(node.val);
-
-                    if (node.left != null) {
-                        two.offer(node.left);
-                    }
-
-                    if (node.right != null) {
-                        two.offer(node.right);
-                    }
-
-                    if (one.isEmpty()) {
+                if (node == null) {
+                    if (linked.isEmpty()) {
                         listList.addFirst(nodeList);
-                        nodeList = new ArrayList<>();
-                        oneFlag = false;
+                        return listList;
                     }
-
-                } else {
-                    TreeNode node = two.poll();
-                    nodeList.add(node.val);
-
-                    if (node.left != null) {
-                        one.offer(node.left);
-                    }
-                    if (node.right != null) {
-                        one.offer(node.right);
-                    }
-
-                    if (two.isEmpty()) {
-                        listList.addFirst(nodeList);
-                        nodeList = new ArrayList<>();
-                        oneFlag = true;
-                    }
-
+                    linked.offer(null);
+                    listList.addFirst(nodeList);
+                    nodeList = new ArrayList<>();
+                    continue;
                 }
 
+                nodeList.add(node.val);
+
+                if (node.left != null) {
+                    linked.offer(node.left);
+                }
+
+                if (node.right != null) {
+                    linked.offer(node.right);
+                }
             }
 
             return listList;

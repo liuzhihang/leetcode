@@ -18,7 +18,6 @@ public class ReverseLinkedList {
 
         Solution solution = new ReverseLinkedList().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
 
     public class ListNode {
         int val;
@@ -37,6 +36,8 @@ public class ReverseLinkedList {
         }
     }
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+
     class Solution {
 
         // 递归法
@@ -46,33 +47,19 @@ public class ReverseLinkedList {
                 return head;
             }
 
-            ListNode listNode = reverseList(head.next);
+            ListNode tempHead = null;
 
-            head.next.next = head;
-            head.next = null;
-            return listNode;
+
+            while (head != null) {
+                ListNode temp = head.next;
+                head.next = tempHead;
+                tempHead = head;
+                head = temp;
+            }
+
+            return tempHead;
         }
-        // public ListNode reverseList(ListNode head) {
-        //
-        //     if (head == null || head.next == null) {
-        //         return head;
-        //     }
-        //
-        //     ListNode temp;
-        //     ListNode newHead = null;
-        //
-        //     while (head != null) {
-        //
-        //         temp = head.next;
-        //         head.next = newHead;
-        //         newHead = head;
-        //         head = temp;
-        //
-        //     }
-        //
-        //     return newHead;
-        //
-        // }
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
