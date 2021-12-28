@@ -58,6 +58,8 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
+import java.util.Arrays;
+
 public class MedianOfTwoSortedArrays {
 
     public static void main(String[] args) {
@@ -70,7 +72,25 @@ public class MedianOfTwoSortedArrays {
     class Solution {
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-            return 0;
+            int length1 = nums1.length;
+            int length2 = nums2.length;
+
+            int[] res = new int[length1 + length2];
+
+            System.arraycopy(nums1, 0, res, 0, length1);
+            System.arraycopy(nums2, 0, res, length1, length2);
+
+            Arrays.sort(res);
+
+            int i = res.length / 2;
+            if (res.length % 2 == 0) {
+                double i1 = res[i] + res[i - 1];
+                return i1 / 2;
+
+            } else {
+                return res[i];
+            }
+
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
