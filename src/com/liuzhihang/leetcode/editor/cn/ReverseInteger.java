@@ -37,9 +37,6 @@ public class ReverseInteger {
     class Solution {
         public int reverse(int x) {
 
-            int min = 0x80000000;
-            int max = 0x7fffffff;
-
             int abs = (x < 0) ? -x : x;
 
             long result = 0;
@@ -52,7 +49,7 @@ public class ReverseInteger {
 
             }
 
-            if (result > max) {
+            if (result > Integer.MAX_VALUE) {
                 return 0;
             }
 

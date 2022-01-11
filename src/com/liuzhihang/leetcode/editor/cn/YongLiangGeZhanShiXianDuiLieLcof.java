@@ -30,7 +30,7 @@
 
 package com.liuzhihang.leetcode.editor.cn;
 
-import java.util.LinkedList;
+import java.util.Stack;
 
 public class YongLiangGeZhanShiXianDuiLieLcof {
 
@@ -43,12 +43,12 @@ public class YongLiangGeZhanShiXianDuiLieLcof {
     //leetcode submit region begin(Prohibit modification and deletion)
     class CQueue {
 
-        private LinkedList<Integer> stack1;
-        private LinkedList<Integer> stack2;
+        private Stack<Integer> stack1;
+        private Stack<Integer> stack2;
 
         public CQueue() {
-            stack1 = new LinkedList<>();
-            stack2 = new LinkedList<>();
+            stack1 = new Stack<>();
+            stack2 = new Stack<>();
         }
 
         public void appendTail(int value) {

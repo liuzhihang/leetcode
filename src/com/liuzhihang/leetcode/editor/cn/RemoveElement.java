@@ -49,7 +49,7 @@ public class RemoveElement {
     public static void main(String[] args) {
 
         Solution solution = new RemoveElement().new Solution();
-        int i = solution.removeElement(new int[]{2}, 3);
+        int i = solution.removeElement(new int[]{0, 1, 2, 3, 4, 5}, 3);
         System.out.println(i);
     }
 
@@ -58,23 +58,19 @@ public class RemoveElement {
     class Solution {
         public int removeElement(int[] nums, int val) {
 
-            int length = nums.length;
+            int idx = 0;
+            int last = nums.length;
 
-            if (length == 0) {
-                return 0;
-            }
-
-
-            int endIdx = 0;
-
-            for (int i = 0; i < length; i++) {
-                if (nums[i] != val) {
-                    nums[endIdx] = nums[i];
-                    endIdx++;
+            while (idx < last) {
+                if (nums[idx] == val) {
+                    nums[idx] = nums[last - 1];
+                    last--;
+                } else {
+                    idx++;
                 }
             }
 
-            return endIdx++;
+            return idx;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
